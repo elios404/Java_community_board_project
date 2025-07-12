@@ -88,8 +88,8 @@ public class Article {
     public String toString() {
         return "제목 : " + title + "\n" +
                 "글 작성자 : " + userName + "\n" +
-                "작성일자 : " + createTime.format(formatter) +
-                "수정일자 : " + ((updateTime != null) ? updateTime.format(formatter) : " ") +
+                "작성일자 : " + createTime.format(formatter) + "\n" +
+                "수정일자 : " + ((updateTime != null) ? updateTime.format(formatter) : " ") + "\n" +
                 "조회수 : " + views + "\n\n" +
                 "내용 : " + content + "\n" ;
     }
