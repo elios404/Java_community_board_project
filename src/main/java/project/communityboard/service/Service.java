@@ -1,21 +1,21 @@
 package project.communityboard.service;
 
 import project.communityboard.entity.board.Board;
-import project.communityboard.entity.user.User;
+import project.communityboard.entity.user.Member;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Service {
 
-    private User activeUser = null;
+    private Member activeUser = null;
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Service service = new Service();
         BoardService boardService = new BoardService();
         UserService userService = new UserService();
-        ArrayList<User> users = new ArrayList<>();
+        ArrayList<Member> users = new ArrayList<>();
 
         ArrayList<Board> boards = new ArrayList<>();
         boards.add(new Board("Car"));

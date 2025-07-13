@@ -1,6 +1,6 @@
 package project.communityboard.service;
 
-import project.communityboard.entity.user.User;
+import project.communityboard.entity.user.Member;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -10,7 +10,7 @@ public class UserService {
 
     Scanner sc = new Scanner(System.in);
 
-    public User registerUser() {
+    public Member registerUser() {
         System.out.println("\n회원 가입 공간입니다!");
 
         System.out.print("아이디를 입력해 주세요 : ");
@@ -22,16 +22,16 @@ public class UserService {
         System.out.print("유저 비밀번호를 입력해 주세요 : ");
         String userPassword = sc.nextLine();
 
-        return new User(userID, userName, userPassword);
+        return new Member(userID, userName, userPassword);
     }
 
-    public User loginUser(ArrayList<User> users) {
+    public Member loginUser(ArrayList<Member> users) {
         System.out.println("\n로그인 공간입니다!");
 
         System.out.print("\n회원 아이디를 입력해 주세요 : ");
         String userIdInput = sc.nextLine();
 
-        User user = getUserByUserID(users, userIdInput).orElse(null);
+        Member user = getUserByUserID(users, userIdInput).orElse(null);
         if (user != null) {
             System.out.print("비밀번호를 입력해 주세요 : ");
             String userPasswordInput = sc.nextLine();
@@ -47,7 +47,7 @@ public class UserService {
         }
     }
 
-    private Optional<User> getUserByUserID(ArrayList<User> users, String userID) {
+    private Optional<Member> getUserByUserID(ArrayList<Member> users, String userID) {
         return users.stream()
                 .filter(user -> user.getUserID().equals(userID))
                 .findFirst();

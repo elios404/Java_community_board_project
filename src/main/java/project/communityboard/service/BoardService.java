@@ -2,17 +2,15 @@ package project.communityboard.service;
 
 import project.communityboard.entity.article.Article;
 import project.communityboard.entity.board.Board;
-import project.communityboard.entity.user.User;
+import project.communityboard.entity.user.Member;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BoardService {
 
     Scanner sc = new Scanner(System.in);
 
-    public void runBoardService(Board board, User activeUser) {
+    public void runBoardService(Board board, Member activeUser) {
         int choice = 0;
         while (choice != 6) {
             choice = selectChoice(activeUser);
@@ -105,7 +103,7 @@ public class BoardService {
         }
     }
 
-    private int selectChoice(User activeUser) {
+    private int selectChoice(Member activeUser) {
         System.out.println("\n게시판 서비스에 온 것을 환영합니다! 현재 사용자 : " + ((activeUser != null)? activeUser.getUserName() : "로그인 없음"));
         System.out.println("1. 전체 게시글 보기 \n2. 게시글 읽기 \n3. 게시글 작성 \n4. 게시글 수정 \n5. 게시글 삭제 \n6. 메인 메뉴로 나가기");
         System.out.print("진행하려는 메뉴 번호를 숫자로 입력해 주세요 : ");

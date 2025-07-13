@@ -1,5 +1,5 @@
 package project.communityboard.entity.article;
-import project.communityboard.entity.user.User;
+import project.communityboard.entity.user.Member;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +18,7 @@ public class Article {
     private LocalDateTime updateTime;
     private int views = 0;
 
-    public Article(String title, String content, User user) {
+    public Article(String title, String content, Member user) {
         this.title = title;
         this.content = content;
 

@@ -1,7 +1,7 @@
 package project.communityboard.entity.board;
 
 import project.communityboard.entity.article.Article;
-import project.communityboard.entity.user.User;
+import project.communityboard.entity.user.Member;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class Board {
         }
     }
 
-    public void postArticle(String title, String content, User user) {
+    public void postArticle(String title, String content, Member user) {
         articles.add(new Article(title, content, user));
     }
 

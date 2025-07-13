@@ -1,6 +1,6 @@
 package project.communityboard.entity.user;
 
-public class User {
+public class Member {
 
     private static int globalUserNo = 1;
 
@@ -9,7 +9,7 @@ public class User {
     private String userName;
     private String userPassword;
 
-    public User(String userID, String userName, String userPassword) {
+    public Member(String userID, String userName, String userPassword) {
         this.userID = userID;
         this.userName = userName;
         this.userPassword = userPassword;
