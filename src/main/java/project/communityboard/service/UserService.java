@@ -22,7 +22,7 @@ public class UserService {
         System.out.print("유저 비밀번호를 입력해 주세요 : ");
         String userPassword = sc.nextLine();
 
-        return new Member(userID, userName, userPassword);
+        return new Member.Builder(userID, userPassword).userName(userName).build();
     }
 
     public Member loginUser(ArrayList<Member> users) {

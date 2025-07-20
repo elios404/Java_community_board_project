@@ -9,12 +9,32 @@ public class Member {
     private String userName;
     private String userPassword;
 
-    public Member(String userID, String userName, String userPassword) {
-        this.userID = userID;
-        this.userName = userName;
-        this.userPassword = userPassword;
+    public Member(Builder builder) {
+        this.userID = builder.userID;
+        this.userName = builder.userName;
+        this.userPassword = builder.userPassword;
 
         this.userNo = globalUserNo++;
+    }
+
+    public static class Builder {
+        private String userID;
+        private String userName;
+        private String userPassword;
+
+        public Builder(String userID, String userPassword) {
+            this.userID = userID;
+            this.userPassword = userPassword;
+        }
+
+        public Builder userName(String userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        public Member build() {
+            return new Member(this);
+        }
     }
 
     public int getUserNo() {
